@@ -176,15 +176,105 @@ details[open] summary::before {
     font-size: 14px;
 }
 
+.extensions {
+    margin-top: 96px;
+    padding: 72px 32px;
+    background: #f6f8fa;
+    border-radius: 24px;
+}
+
+.extensions h2 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.extensions-subtitle {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    color: #57606a;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.extensions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.extension-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid #d0d7de;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: 0.25s ease;
+}
+
+.extension-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(27, 31, 36, 0.12);
+}
+
+.extension-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.extension-card p {
+    color: #57606a;
+    font-size: 15px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.extension-card a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #1f6feb;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+}
+
+.extension-card.ai .tag {
+    background: #e7f0ff;
+    color: #1f6feb;
+}
+
+.extension-card.security .tag {
+    background: #fff1f2;
+    color: #cf222e;
+}
+
+.extension-card.infra .tag {
+    background: #ecfdf3;
+    color: #116329;
+}
+
+.extension-card.support .tag {
+    background: #fdf4ff;
+    color: #8250df;
+}
+
 @media (max-width: 900px) {
-    .cards {
+    .extensions-grid {
         grid-template-columns: 1fr;
     }
-    }
-    .button {
-        flex-direction: column;
-    }
 
+    .extensions h2 {
+        font-size: 40px;
+    }
+}
     </style>
 </head>
 <body>
@@ -284,6 +374,75 @@ details[open] summary::before {
             </div>
         </div>
         </section>
+        <section class="extensions">
+    <h2>Platform extensions</h2>
+    <p class="extensions-subtitle">
+        Extend GitHub with powerful tools for AI, security, and cloud development.
+        Enable only what your team actually needs.
+    </p>
+
+    <div class="extensions-grid">
+        <div class="extension-card ai">
+            <span class="tag">AI</span>
+            <h3>Copilot Workspace</h3>
+            <p>
+                AI-native development with contextual code suggestions,
+                chat, and task automation — right inside your editor.
+            </p>
+            <a href="#">Explore Copilot →</a>
+        </div>
+
+        <div class="extension-card ai">
+            <span class="tag">AI</span>
+            <h3>Model Playground</h3>
+            <p>
+                Experiment with multiple foundation models,
+                manage prompts, and control data usage securely.
+            </p>
+            <a href="#">View models →</a>
+        </div>
+
+        <div class="extension-card security">
+            <span class="tag">Security</span>
+            <h3>Advanced Security</h3>
+            <p>
+                Prevent vulnerabilities with code scanning,
+                secret detection, and dependency insights.
+            </p>
+            <a href="#">Security overview →</a>
+        </div>
+
+        <div class="extension-card infra">
+            <span class="tag">Cloud</span>
+            <h3>Codespaces</h3>
+            <p>
+                Instant cloud development environments with
+                configurable compute and storage.
+            </p>
+            <a href="#">Pricing details →</a>
+        </div>
+
+        <div class="extension-card support">
+            <span class="tag">Support</span>
+            <h3>Enterprise Support</h3>
+            <p>
+                24/7 expert assistance, SLA-backed responses,
+                and proactive incident management.
+            </p>
+            <a href="#">Support plans →</a>
+        </div>
+
+        <div class="extension-card infra">
+            <span class="tag">Storage</span>
+            <h3>Large File Storage</h3>
+            <p>
+                Store and version large assets efficiently
+                without bloating your repositories.
+            </p>
+            <a href="#">Learn about LFS →</a>
+        </div>
+    </div>
+</section>
     </main>
 </body>
 </html>
