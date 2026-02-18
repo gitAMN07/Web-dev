@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+  }
+  
+  h3 {
+    margin: 8px 0;
+  }
+  
+  button {
+    font-size: 14px;
+  }  
