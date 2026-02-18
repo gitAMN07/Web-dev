@@ -100,7 +100,7 @@ export class ProductListComponent {
       price: 5999,
       rating: 5.0,
       image: 'https://resources.cdn-kaspi.kz/img/m/p/hf0/h61/84201003712542.jpg?format=gallery-medium',
-      images: ['https://resources.cdn-kaspi.kz/img/m/p/h44/h96/84201003778078.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h44/h96/84201003778078.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h44/h96/84201003778078.jpg?format=gallery-medium'],
+      images: ['https://resources.cdn-kaspi.kz/img/m/p/hf0/h61/84201003712542.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h44/h96/84201003778078.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h44/h96/84201003778078.jpg?format=gallery-medium'],
       link: 'https://surl.lu/etuemq'
     },
     {
