@@ -1,11 +1,29 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductService } from './services/product.service';
+import { Category } from './models/category.model';
+import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `<router-outlet></router-outlet>`,
+  imports: [CommonModule, ProductListComponent],
+  templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
-export class AppComponent {}
+export class AppComponent {
+
+  categories: Category[] = [];
+  selectedCategoryId: number | null = null;
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {
+    this.categories = this.productService.getCategories();
+  }
+
+  selectCategory(id: number) {
+    this.selectedCategoryId = id;
+    this.products = this.productService.getProductsByCategory(id);
+  }
+}

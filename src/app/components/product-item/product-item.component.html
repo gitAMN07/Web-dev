@@ -1,0 +1,42 @@
+<div class="product-card">
+
+    <div class="image-wrapper">
+      <img [src]="product.images[selectedImageIndex]" class="main-image">
+    </div>
+  
+    <div class="thumbnails" *ngIf="product.images.length > 1">
+      <img
+        *ngFor="let img of product.images; let i = index"
+        [src]="img"
+        (click)="selectImage(i)"
+        [class.active]="i === selectedImageIndex"
+      >
+    </div>
+  
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+  
+    <div class="price">{{ product.price }} ₸</div>
+  
+    <div class="rating">
+      ⭐ {{ product.rating }}
+    </div>
+  
+    <div class="likes" [class.liked]="liked">
+        ❤️ {{ product.likes }}
+    </div>
+  
+    <div class="buttons">
+      <button (click)="like()">Like</button>
+      <button (click)="remove()">Delete</button>
+  
+      <a [href]="'https://wa.me/?text=' + product.link" target="_blank">
+        <button>WhatsApp</button>
+      </a>
+  
+      <a [href]="'https://t.me/share/url?url=' + product.link" target="_blank">
+        <button>Telegram</button>
+      </a>
+    </div>
+  
+  </div>
