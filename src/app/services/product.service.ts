@@ -238,7 +238,14 @@ export class ProductService {
   ];
 
   getCategories(): Category[] {
-    return this.categories;
+    return [
+        {id: 0 , name:"Favorites"},
+        ...this.categories
+    ];
+  }
+
+  getFavorites(): Product[] {
+    return this.products
   }
 
   getProducts(): Product[] {

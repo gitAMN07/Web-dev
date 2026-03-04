@@ -25,6 +25,8 @@ export class ProductItemComponent {
     this.product.likes++;
     this.liked = true;
 
+  
+
   setTimeout(() => {
     this.liked = false;
   }, 300);
