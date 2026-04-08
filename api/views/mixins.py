@@ -1,0 +1,42 @@
+from rest_framework import mixins, generics
+
+from api.models import Product
+from api.serializers import ProductSerializer
+
+
+class ProductListAPIView(
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    generics.GenericAPIView
+):
+    queryset = Product.objects.filter(is_active=True)
+    serializer_class = ProductSerializer
+
+    def get(self, request):
+        return self.list(request)
+
+    def post(self, request):
+        return self.create(request)
+
+
+class ProductDetailAPIView(
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    generics.GenericAPIView
+):
+    queryset = Product.objects.filter(is_active=True)
+    serializer_class = ProductSerializer
+    lookup_url_kwarg = 'product_id'
+
+    def get(self, request, product_id):
+        return self.retrieve(request, product_id=product_id)
+
+    def put(self, request, product_id):
+        return self.update(request, product_id=product_id)
+
+    def delete(self, request, product_id):
+        instance = self.get_object()
+        instance.is_active = False
+        instance.save()
+        return Response({"message": "Deleted"})
